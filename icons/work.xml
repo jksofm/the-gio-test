@@ -1,0 +1,278 @@
+﻿<krpano>
+	<!-- Style hotspot --> 
+	<style name="flag_icon" keep="false" type="image" url="%FIRSTXML%/icon/line.png" width="prop" height="100" edge="bottom" capture="false" handcursor="false" 
+		title="77" icon="true"
+		onloaded="create_ichs();"
+	/>
+	
+	<!-- Text style -->         		   
+	<style name="text_hsic" keep="false" type="text" x="0" y="0" padding="5 10 5 30" align="top" edge="bottom" enabled="false" 
+			css="font-family:Verdana; color:#03959A; font-size:12px;font-weight:bold;" 
+			background="true" backgroundcolor="0xF2F2F2" backgroundalpha="0.7"			   
+			bgroundedge="10" bgborder="0 FFFFFF 0" bgbordercolor="0xF2F2F2" bgborderwidth="0" wordwrap="true" 
+			
+	/>
+	
+	<!-- Icon style -->         		   
+	<style name="ic_hsic" keep="false" type="image" x="25" y="0" align="left" edge="right" height="60%" width="prop" enabled="false" />
+		  
+	
+	<!-- create a hotspot -->
+    <action name="create_ichs" scope="local" args="st, crop"  >  
+		calc(txths, caller.name + 'txt');
+		addlayer(get(txths), tx);
+		tx.loadstyle('text_hsic');
+		copy(tx.html, caller.title);
+		if(caller.click, copy(tx.onclick, caller.click); set(tx.enabled, true));					
+		calc(tx.parent, 'hotspot[' + caller.name + ']');
+		
+		calc(ichs, caller.name + 'ic');
+		addlayer(get(ichs), ic);
+		 
+		ic.loadstyle('ic_hsic');
+		copy(ic.url, caller.icon);
+		copy(ic.parent, txths);
+		
+	</action>
+	
+	
+	<!-- ////////////////////////////////////////////////// -->
+	
+	<!-- ========== Center ========== -->
+	<!-- Style hotspot --> 
+	<style name="miniat_hs" keep="false" type="image" url="%FIRSTXML%/icon/line.png" width="prop" height="100" edge="bottom" capture="false" handcursor="false" 
+		title="77" icon="true"  
+		onloaded="create_miniat();"
+	/>
+	
+	<!-- container -->
+	<style name="cont_hs" type="container" keep="false" align="top" edge="bottom" x="0" y="0" width="80" height="20" zorder="1" alpha="1" enabled="false" maskchildren="true" 
+            bgcapture="true" bg="false" bgcolor="0xF2F2F2B2" bgalpha="0" bgshadow="2 2 5 0x000000 0.5" bgroundedge="10" bgborder="5 0xF2F2F2 0.6"  
+            onover="hsow_miniat()" ondown="onover()" onup="" onout="hide_miniat(get(name))" temp_w="" temp_h="20"
+    />
+
+	<!-- ========== Left ========== -->
+    <!-- Style hotspot --> 
+	<style name="miniat_hs_left" keep="false" type="image" url="%FIRSTXML%/icon/line.png" width="prop" height="100" edge="bottom" capture="false" handcursor="false" 
+		title="77" icon="true"  
+		onloaded="create_miniat_left();"
+	/>
+	
+	<!-- container -->
+	<style name="cont_hs_left" type="container" keep="false" align="top" edge="bottom" x="-40" y="0" width="80" height="20" zorder="1" alpha="1" enabled="false" maskchildren="true" 
+            bgcapture="true" bg="false" bgcolor="0xF2F2F2B2" bgalpha="0" bgshadow="2 2 5 0x000000 0.5" bgroundedge="10" bgborder="5 0xF2F2F2 0.6"  
+            onover="hsow_miniat()" ondown="onover()" onup="" onout="hide_miniat(get(name))" temp_w="" temp_h="20"
+    />
+
+    <!-- ========== Right ========== -->
+    <!-- Style hotspot --> 
+	<style name="miniat_hs_right" keep="false" type="image" url="%FIRSTXML%/icon/line.png" width="prop" height="100" edge="bottom" capture="false" handcursor="false" 
+		title="77" icon="true"  
+		onloaded="create_miniat_right();"
+	/>
+	
+	<!-- container -->
+	<style name="cont_hs_right" type="container" keep="false" align="top" edge="bottom" x="40" y="0" width="80" height="20" zorder="1" alpha="1" enabled="false" maskchildren="true" 
+            bgcapture="true" bg="false" bgcolor="0xF2F2F2B2" bgalpha="0" bgshadow="2 2 5 0x000000 0.5" bgroundedge="10" bgborder="5 0xF2F2F2 0.6"  
+            onover="hsow_miniat()" ondown="onover()" onup="" onout="hide_miniat(get(name))" temp_w="" temp_h="20"
+    />
+	   
+	<!-- Text style -->         		   
+	<style name="text_lay" keep="false" type="text" x="0" y="0" align="bottom" height="20" width="100%" enabled="false" zorder="11"
+			css="font-family:Verdana; color:#03959A; font-size:12px; text-align: center;" vcenter="true"
+			background="true" backgroundcolor="0xffffff" backgroundalpha="1"			   
+			bgroundedge="0" bgborder="0 0x000000 0" bgbordercolor="0x2D3E50" bgborderwidth="0" wordwrap="true" 
+			shadow="5.0"  shadowrange="3.0"  shadowangle="45"  shadowcolor="0x2D3E50"  shadowalpha="0"
+			txtshadow="1 1 3 0x000000 0.0" 
+	/>
+	
+ 	<style name="miniat_img" keep="false" type="image" align="center" url="%FIRSTXML%/icon/line.png" width="100%" height="prop" enabled="false" zorder="10" />
+	
+	
+	<!-- create a hotspot -->
+	<!-- Center -->
+    <action name="create_miniat" scope="local" args="st, crop"  >  
+		calc(conths, caller.name + 'cont');
+		addlayer(get(conths), con);
+		con.loadstyle('cont_hs');
+		calc(con.parent, 'hotspot[' + caller.name + ']');
+		if(caller.click, copy(con.onclick, caller.click);  
+		set(con.enabled, true));
+		copy(con.width , caller.widcont);
+		copy(con.temp_w, con.width);
+		copy(con.temp_h, con.height);  		
+		
+		calc(texths, caller.name + 'txt');
+		addlayer(get(texths), txhs);
+		txhs.loadstyle('text_lay');
+		copy(txhs.html, caller.title);
+		copy(txhs.parent, conths);
+		
+		calc(imghs, caller.name + 'img');
+		addlayer(get(imghs), imgh);
+		imgh.loadstyle('miniat_img');
+		copy(imgh.url, caller.icon);
+		copy(imgh.parent, conths);
+	</action>
+	
+	<!-- Left -->
+	<action name="create_miniat_left" scope="local" args="st, crop"  >  
+		calc(conths, caller.name + 'cont');
+		addlayer(get(conths), con);
+		con.loadstyle('cont_hs_left');
+		calc(con.parent, 'hotspot[' + caller.name + ']');
+		if(caller.click, copy(con.onclick, caller.click);  
+		set(con.enabled, true));
+		copy(con.width , caller.widcont);
+		copy(con.temp_w, con.width);
+		copy(con.temp_h, con.height);  		
+		
+		calc(texths, caller.name + 'txt');
+		addlayer(get(texths), txhs);
+		txhs.loadstyle('text_lay');
+		copy(txhs.html, caller.title);
+		copy(txhs.parent, conths);
+		
+		calc(imghs, caller.name + 'img');
+		addlayer(get(imghs), imgh);
+		imgh.loadstyle('miniat_img');
+		copy(imgh.url, caller.icon);
+		copy(imgh.parent, conths);
+	</action>
+
+	<!-- Right -->
+	<action name="create_miniat_right" scope="local" args="st, crop"  >  
+		calc(conths, caller.name + 'cont');
+		addlayer(get(conths), con);
+		con.loadstyle('cont_hs_right');
+		calc(con.parent, 'hotspot[' + caller.name + ']');
+		if(caller.click, copy(con.onclick, caller.click);  
+		set(con.enabled, true));
+		copy(con.width , caller.widcont);
+		copy(con.temp_w, con.width);
+		copy(con.temp_h, con.height);  		
+		
+		calc(texths, caller.name + 'txt');
+		addlayer(get(texths), txhs);
+		txhs.loadstyle('text_lay');
+		copy(txhs.html, caller.title);
+		copy(txhs.parent, conths);
+		
+		calc(imghs, caller.name + 'img');
+		addlayer(get(imghs), imgh);
+		imgh.loadstyle('miniat_img');
+		copy(imgh.url, caller.icon);
+		copy(imgh.parent, conths);
+	</action>
+	
+	<!-- при наведени на текст -->
+    <action name="hsow_miniat" >  
+		tween(layer[get(name)].width, 150, 0.3);
+		tween(layer[get(name)].height, 100, 0.3); 
+		set(layer[get(name)].zorder, 15); 
+	</action>
+	
+	<!-- при отведении мыши  -->
+    <action name="hide_miniat"  scope="local" args="nam"  >  
+		calc(conths, layer[get(nam)]); 
+		if(conths.temp_w, tween(conths.width, get(conths.temp_w), 0.3));
+		if(conths.height,tween(conths.height, get(conths.temp_h), 0.3));   
+	</action>
+	
+	<!-- открыть панораму  -->
+    <action name="loadsc"   >  
+		 delayedcall(0.5, loadscene(%1,null,MERGE,BLEND(0.5)));
+	</action>
+	
+	
+	
+	
+	
+	<!-- ////////////////////////////////////////////////// -->
+	
+	
+	<!-- Анимированный хотспот css (точка) раскрывает флаг -->
+	<style name="anime_circl" type="text" bgalpha="0.0" bgcapture="true" width="60" height="60" renderer="css3d" zorder="11" depth="off"
+			html="get:data[animaciya].content" 
+			onclick=""  onloaded=""
+	/>		
+	
+	<data name="animaciya"><![CDATA[
+		<div class="dws">
+			<div class="pulse">
+			  <div class="bloc"></div>
+			</div>
+		</div>
+	]]></data>
+	
+	<!-- Style hotspot --> 
+	<style name="anim_baza" keep="false" type="text" renderer="css3d" width="5" height="5" edge="center" depth="off" zorder="10" onloaded="create_miniat3()" />
+	
+	
+	<!-- Style hotspot --> 
+	<style name="miniat_hs3" keep="false" type="image" url="" renderer="css3d" depth="off" width="prop" height="40" edge="center" crop="0|0|50|50" zorder="12" 		capture="false" handcursor="true" ox="0" oy="0" title="77" icon="true" 
+			 onover.addevent="set(crop, '0|50|50|50');"  onout.addevent="set(crop, '0|0|50|50');"
+			onloaded=""
+	/>
+	
+	<!-- container -->
+	<style name="cont_hs3" type="container" keep="false" align="center" edge="top" x="0" y="0" width="150" height="100" scale="1.0" zorder="1" alpha="0" enabled="false" maskchildren="true"
+            bgcapture="true" bg="false" bgcolor="0xF2F2F2B2" bgalpha="0" bgshadow="2 2 5 0x000000 0.5" bgroundedge="10" bgborder="6 0xF2F2F2 0.6"  
+            onover=" " ondown=" " onup="" onout=" " temp_w="" temp_h=""
+    />
+	   
+	<!-- Text style -->         		   
+	<style name="text_lay3" keep="false" type="text" x="0" y="0" align="bottom" height="20" width="100%" enabled="false" zorder="11"
+			css="font-family:Verdana; color:#000000; font-size:12px; text-align: center;" vcenter="true"
+			background="true" backgroundcolor="0xffffff" backgroundalpha="1"			   
+			bgroundedge="0" bgborder="0 0x000000 0" bgbordercolor="0x2D3E50" bgborderwidth="0" wordwrap="true" 
+			shadow="5.0"  shadowrange="3.0"  shadowangle="45"  shadowcolor="0x2D3E50"  shadowalpha="0"
+			txtshadow="1 1 3 0x000000 0.0" 
+	/>
+	
+	
+	<!-- create a hotspot -->
+    <action name="create_miniat3" scope="local" args="st, crop"  >
+		calc(conths, caller.name + 'cont');
+		addlayer(get(conths), con);
+		con.loadstyle('cont_hs3');
+		calc(con.parent, 'hotspot[' + caller.name + ']');
+		
+		
+		calc(ani, caller.name + 'anime');
+		addhotspot(get(ani), anim);
+		anim.loadstyle('anime_circl');
+		copy(anim.ath, caller.ath);
+		copy(anim.atv, caller.atv);  
+		
+		calc(ic, caller.name + 'ic');
+		addhotspot(get(ic), icon);
+		icon.loadstyle('miniat_hs3');
+		copy(icon.url, caller.icon2);
+		
+		copy(icon.ath, caller.ath);
+		copy(icon.atv, caller.atv); 
+		calc(icon.onover, 'tween(layer[' + conths + '].alpha, 1, 0.3);');
+		calc(icon.onout, 'tween(layer[' + conths + '].alpha, 0, 0.3)');
+		if(caller.click, copy(icon.onclick, caller.click); );
+		
+			  		
+		calc(texths, caller.name + 'txt');
+		addlayer(get(texths), txhs);
+		txhs.loadstyle('text_lay3');
+		copy(txhs.html, caller.title);
+		copy(txhs.parent, conths);
+		
+		calc(imghs, caller.name + 'img');
+		addlayer(get(imghs), imgh);
+		imgh.loadstyle('miniat_img');
+		copy(imgh.url, caller.icon);
+		copy(imgh.parent, conths);
+	</action>
+	
+	<!-- открыть панораму  -->
+    <action name="loadsc3"   >  
+		loadscene(%1,null,MERGE,BLEND(0.5));
+	</action>
+
+</krpano>

@@ -1,0 +1,157 @@
+<krpano de="45">
+
+<!-- HOTSPOT - BEGIN -->
+	<!-- Default Hotspot Style - BEGIN -->
+	<style name="hs_default"
+		
+	 />
+	<!-- Default Hotspot Style - END -->
+
+	<!-- A Custom Hotspot Style - BEGIN -->
+	<style name="hotspotcauvang" scale=".6" edge="center" url="img/cauvang24.png" crop="0|0|64|64" framewidth="64" frameheight="64" frame="0" lastframe="23" onloaded="hotspot_animate();" />
+	<!-- A Custom Hotspot Style - END -->
+
+	<!-- Create Hotspot Action - BEGIN -->
+	<action name="create_hs_back" scope="global">
+		<!-- begin hover -->
+		addhotspot(%1);
+		copy(hs,hotspot[%1]);
+		hs.loadstyle(hs_default|%2);
+		set(hs.ath,%3);
+		set(hs.atv,%4);
+		set(hs.capture,0);
+		set(hs.visible,1);
+		set(hs.onclick,	
+			set(layer[hs_tooltip_container].visible,false);
+			wait(.5);
+			loadscene(get(name),null, MERGE, BLEND(1.0, easeInCubic));
+		);
+		<!-- end hover -->
+
+		<!-- begin callout -->
+		txtadd(temp_hs1,%1,_new_home);
+		if(%6,add_hs(get(temp_hs1),%3,%4,%6,-50);,add_hs(get(temp_hs1),%3,%4,40,-50););
+		if(%6,add_tien_ich_n(get(temp_hs1),get(scene[%1].title),%7,0);,add_tien_ich_n(get(temp_hs1),get(scene[%1].title),center,0););
+		<!-- end callout -->
+	</action>
+	<!-- Create Hotspot Action - END -->
+
+	<!-- Hotspot Animate Action- BEGIN -->
+	<action name="hotspot_animate">
+        inc(frame,1,get(lastframe),0);
+        mul(ypos,frame,frameheight);
+        txtadd(crop,'0|',get(ypos),'|',get(framewidth),'|',get(frameheight));
+        delayedcall(.095, if(loaded, hotspot_animate() ) );
+	</action>
+	<!-- Hotspot Animate Action- END -->
+<!-- HOTSPOT - END -->
+
+<!-- LINE CALLOUT - BEGIN -->
+	<!-- Line Style - BEGIN -->
+	
+	<style 	name="hs_trait"
+			url="%SWFPATH%/plugins/placehotspot/core/hs/trait.png" 
+			t_height="90"
+			n_height="90" 
+			oy="15" 
+			show="true" 
+			width="drop" 
+			height="90" 
+			scale="1.5" 
+			edge="bottomleft" 
+			zoder="-1000" 
+			rotate="0" 
+			enabled="true" 
+			alpha="0" 
+			onloaded="callout()" 
+			callout=	"adjusthlookat(10);  
+						if(
+							(ath LT calc(view.hlookat+30)) AND (ath GT calc(view.hlookat-30)),
+							tween(alpha,1,.5);tween(height,get(n_height),.3,easeoutsine, if(callout, callout()) );,
+							tween(alpha,0,.2);tween(height,0,.3,easeoutsine, if(callout, callout()) ); 
+						);" 
+	/>
+	<!-- Line Style - END -->
+	<!-- Add Callout Line Action- BEGIN -->
+	<action name="add_hs">
+		addhotspot(%1); 
+		copy(hs,hotspot[%1]); 
+		hs.loadstyle(hs_trait); 
+		set(hs.ath,%2); 
+		set(hs.atv,%3);
+		inc(hs.atv,1); 
+		set(hs.zoder,-1); 
+		set(hs.showh,1); 
+		set(edge,bottom); 
+		if(%4,set(hs.height,%4); 
+		set(hs.n_height,%4);); 
+		if(%5,set(hs.oy,-35)); 
+		set(hs.hstype,callout); 
+	</action>
+	<!-- Add Callout Line Action - END -->
+<!-- LINE CALLOUT - END -->
+
+<!-- TEXT AND BOX - BEGIN -->
+	<!-- Callout Text and Box Style - BEGIN -->
+	<style 
+		name="help_ghichu" rotate="0" zoder="0"
+		url="%SWFPATH%/plugins/textfield.swf"
+		align="centertop" edge="bottom" autowidth="true" autoheight="true" vcenter="true"
+		background="true" backgroundcolor="0xF6E493" backgroundalpha="0.8" bgroundedge="10"
+		enabled="false"
+
+		css=		"color:#264755; 
+					font-family: &#34;Montserrat &#34;,	&#34;Lato	&#34;,sans-serif;
+					font-size:9px;
+					font-weight:bold;
+					text-align:center; 
+					background-color: white;
+					padding:10px;
+					height:auto;
+					border-radius: 10px;
+					border:solid 0.2px #F6E493;"
+
+		css.mobile=	"color:#FFFFFF; 
+                    font-family: &#34;Montserrat &#34;,	&#34;Lato	&#34;,sans-serif;
+                    font-size:8px;
+                    text-align:center; 
+                    background-color: #495D51;
+                    padding:5px;
+                    height:auto;
+                    border-radius: 10px;
+                    border:solid 1px #F6E493;"
+
+		onhover=	"tween(css,get(skin_setting.design_text_css_m),0)" 
+	/>
+	<!-- Callout Text and Box Style - END -->
+	<!-- Add Callout Text and Box Action- BEGIN -->
+	<action name="add_tien_ich_n"> 
+		addlayer(%1); 
+		copy(ti,layer[%1]); 
+		ti.loadstyle(help_ghichu); 
+		set(ti.parent,hotspot[%1]); 
+		set(xra,%2); 
+		toupper(xra); 
+		set(ti.html,get(xra)); 
+		set(ti.edge,%3); 
+		set(ti.zoder,-1); 
+		set(ti.ox,%4);
+	</action>
+	<!-- Add Callout Text and Box Action - END -->
+<!-- TEXT AND BOX - END -->
+	
+	
+	<events   
+			onnewscene="select_butt(); trace(22)"
+	/>
+		
+	<action name="select_butt"> trace(xml.scene);
+		if(	xml.scene == 'scene_102_0661_panorama', js(select_button(tab-h-1)),
+			xml.scene == 'scene_102_0664_panorama', js(select_button(tab-h-2)),
+			xml.scene == 'scene_100_0532_panorama', js(select_button(tab-h-3)),
+			
+		);
+			
+	</action>	
+		
+</krpano>

@@ -1,0 +1,443 @@
+﻿<krpano version="1.20.11" title="Virtual Tour">
+
+	<include url="skin/vtourskin.xml" />
+	<include url="hotspot.xml" />
+
+
+	<include url="%SWFPATH%/plugins/placehotspot/core/coreshort.xml" />
+	<!-- Hover callout 2 -->
+	<include url="%SWFPATH%/plugins/imghotspot/imghotspotshort.xml" />
+	<include url="skin/texthotspot.xml" devices="desktop|table" />
+	<include url="skin/texthotspot_mobile.xml" devices="mobile" />
+	<include url="work.xml" />
+
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings maps="false"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               maps_loadonfirstuse="true"
+	               gyro="true"
+	               gyro_keeplookingdirection="false"
+	               webvr="true"
+	               webvr_keeplookingdirection="true"
+	               webvr_prev_next_hotspots="true"
+	               autotour="false"
+	               littleplanetintro="false"
+	               followmousecontrol="false"
+	               title="true"
+	               thumbs="true"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="false"
+	               thumbs_text="true"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="true"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext=""
+	               layout_width="100%"
+	               layout_maxwidth="814"
+	               controlbar_width="-204"
+	               controlbar_height="40"
+	               controlbar_offset="20"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="10"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="vtourskin.png"
+	               design_bgcolor="0x2D3E50"
+	               design_bgalpha="0.8"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0.3"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+
+	<!--
+	    For an alternative skin design either change the <skin_settings> values 
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	<include url="skin/vtourskin_design_ultra_light.xml" />
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+		<!-- GOKU - Show ath atv onclick event - Begin -->
+ <!-- <events onclick="screentosphere(mouse.x, mouse.y, m_ath, m_atv); showlog(); trace('clicked at ath=',m_ath,' atv=',m_atv);" /> -->
+<!-- GOKU - Show ath atv onclick event - End  -->
+
+	<scene name="scene_overview_sunset" title="Buổi chiều" onstart="" thumburl="panos/overview_sunset.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-1.243" vlookat="2.659" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/overview_sunset.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/overview_sunset.tiles/pano_%s.jpg" />
+		</image>
+		<hotspot name="ic3" style="flag_icon" icon="%FIRSTXML%/icons/bridge.png" height="30"  title="Cầu Đồng Nai" ath="-66" atv="3.6" />
+
+		<events name="" onloadcomplete="
+		create_hs_back(scene_overview,hotspotmaybay,-15.779,-16.8299);
+		create_hs_back(scene_mall,hotspottrungtamthuongmai,-25.261779,11.665);
+		
+		create_hs_back(scene_landscape,hotspotcanhquan,-3.7525,11.636);
+
+		" />
+
+	</scene>
+
+	<scene name="scene_view_from_river" title="Buổi sáng" onstart="" thumburl="panos/view_from_river.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/view_from_river.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/view_from_river.tiles/pano_%s.jpg" />
+		</image>
+
+		<!-- <hotspot name="ic1" style="flag_icon" icon="%FIRSTXML%/icons/park2.png" title="Công viên Jura" onhover="" /> -->
+
+		<hotspot name="ic2" style="flag_icon" icon="%FIRSTXML%/icons/bridge.png" height="30" title="Cầu Đồng Nai" ath="-172" atv="7.1" />
+		<hotspot name="ic1" style="flag_icon" icon="%FIRSTXML%/icons/ttquan1.png" height="45" title="Trung tâm Quận 1" ath="-64" atv="-0.4" />
+
+		<events name="" onloadcomplete="
+		
+	
+		create_hs_back(scene_overview,hotspotmaybay,-20.779,-15.8299);
+		create_hs_back(scene_tennis,hotspotsantennis,-16.7,14.8299);
+		create_hs_back(scene_kid_pool,hotspotkidpool,-9.8963,-15.529);
+        
+	
+	
+		
+
+
+
+		" />
+
+
+	</scene>
+
+
+	
+	<scene name="scene_overview" title="Toàn cảnh góc cao" onstart="" thumburl="panos/overview.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="55.134" vlookat="39.341" fovtype="MFOV" fov="139.265" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/overview.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/overview.tiles/pano_%s.jpg" />
+		</image>
+		<hotspot name="ic1" style="flag_icon" icon="%FIRSTXML%/icons/bridge.png" height="30"  title="Cầu Đồng Nai" ath="-117" atv="14.1" />
+		<hotspot name="ic2" style="flag_icon" icon="%FIRSTXML%/icons/ttquan1.png" height="45" title="Trung tâm Quận 1" ath="-43" atv="-1" />
+
+
+		<events name="" onloadcomplete="
+		
+		create_hs_back(scene_overview_sunset,hotspotbandem,131.732,29.4386);
+		create_hs_back(scene_pool,hotspotbeboi,126.732,59.5386);
+		create_hs_back(scene_pool_night,hotspotbeboidem,30.732,22.5386);
+		create_hs_back(scene_view_from_river,hotspotbanngay,-99.8963,27.529);
+		create_hs_back(scene_kid_pool,hotspotkidpool,15.8963,16.529);
+		create_hs_back(scene_mall,hotspottrungtamthuongmai,150.8963,59.529);
+		create_hs_back(scene_view_from_river,hotspotbanngay,-114.732,37.4386);
+
+
+		" />
+
+
+	</scene>
+
+	<scene name="scene_kid" title="Khu vui chơi trẻ em" onstart="" thumburl="panos/kid.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view  hlookat="11.758" vlookat="31.361" fovtype="MFOV" fov="129.581" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/kid.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/kid.tiles/pano_%s.jpg" />
+		</image>
+		<events name="" onloadcomplete="
+		
+	
+		create_hs_back(scene_overview,hotspotmaybay,-15.361779,-68.887);
+	
+
+		" />
+
+
+	</scene>
+
+	<scene name="scene_tennis" title="Sân tennis" onstart="" thumburl="panos/tennis.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view  hlookat="-3.288" vlookat="31.454" fovtype="MFOV" fov="122.811" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/tennis.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/tennis.tiles/pano_%s.jpg" />
+		</image>
+		<events name="" onloadcomplete="
+	
+		create_hs_back(scene_overview,hotspotmaybay,-15.361779,-68.887);
+		create_hs_back(scene_landscape,hotspotcanhquan,7.14361779,3.84887);
+	
+
+		" />
+
+	</scene>
+
+	<scene name="scene_landscape" title="Cảnh quan" onstart="" thumburl="panos/landscape.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="103.733" vlookat="14.306"  fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/landscape.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/landscape.tiles/pano_%s.jpg" />
+		</image>
+		<events name="" onloadcomplete="
+	
+		create_hs_back(scene_overview,hotspotmaybay,29.868361779,-84.887);
+		create_hs_back(scene_tennis,hotspotsantennis,178.868361779,3.94);
+	
+
+		" />
+
+	</scene>
+
+	<scene name="scene_mall" title="Trung tâm thương mại" onstart="" thumburl="panos/mall.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="20.428" vlookat="3.546" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/mall.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/mall.tiles/pano_%s.jpg" />
+		</image>
+		<events name="" onloadcomplete="
+	
+		create_hs_back(scene_overview,hotspotmaybay,-15.868361779,-78.887);
+	
+
+		" />
+
+	</scene>
+
+	<scene name="scene_pool" title="Hồ bơi ban ngày" onstart="" thumburl="panos/pool.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-15.059" vlookat="1.342" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/pool.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/pool.tiles/pano_%s.jpg" />
+		</image>
+		<events name="" onloadcomplete="
+	
+		
+		create_hs_back(scene_overview,hotspotmaybay,57.361779,-45.38);
+	
+
+		" />
+
+	</scene>
+
+	<scene name="scene_kid_pool" title="Hồ bơi trẻ em" onstart="" thumburl="panos/kid_pool.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="64.405" vlookat="34.327" fovtype="MFOV" fov="128.617" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/kid_pool.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/kid_pool.tiles/pano_%s.jpg" />
+		</image>
+		<events name="" onloadcomplete="
+	
+		create_hs_back(scene_overview,hotspotmaybay,-70.868361779,-7.525);
+	
+
+		" />
+
+	</scene>
+
+	<!-- <scene name="scene_pool_night" title="Hồ bơi buổi tối" onstart="" thumburl="panos/pool_night.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="4.970" vlookat="10.983" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/pool_night.tiles/preview.jpg" />
+
+		<events name="" onloadcomplete="
+	
+		create_hs_back(scene_overview_sunset,hotspotcauvang,-39.361779,4.38);
+	
+
+		" />
+
+	</scene> -->
+	<scene name="scene_pool_night" title="Hồ bơi ban đêm" onstart="" thumburl="panos/pool_night.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/pool_night.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/pool_night.tiles/pano_%s.jpg" />
+		</image>
+		<events name="" onloadcomplete="
+	
+		create_hs_back(scene_overview,hotspotmaybay,58.361779,-40.38);
+	
+
+		" />
+
+	</scene>
+	<!-- <scene name="scene_view1" title="View dự án 1" onstart="" thumburl="panos/view1.tiles/thumb.jpg" lat="10.59706777" lng="107.05688138" heading="0.0">
+
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-111.256" vlookat="31.884" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" hlookatmin="-180" hlookatmax="+180" vlookatmin="-179" vlookatmax="+170"  />
+
+		<preview url="panos/view1.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/view1.tiles/pano_%s.jpg" />
+		</image>
+
+		
+
+	
+
+
+
+		
+
+	</scene>
+
+	<scene name="scene_view2" title="View dự án 2" onstart="" thumburl="panos/view2.tiles/thumb.jpg" lat="10.59479805" lng="107.05747277" heading="0.0">
+
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="331.977" vlookat="25.218" fovtype="MFOV" fov="103.307" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/view2.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/view2.tiles/pano_%s.jpg" />
+		</image>
+
+		
+	</scene>
+
+	<scene name="scene_view25" title="View tầng 25" onstart="" thumburl="panos/view25.tiles/thumb.jpg" lat="10.59625694" lng="107.05518833" heading="0.0">
+
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-133.156" vlookat="22.554" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/view25.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/view25.tiles/pano_%s.jpg" />
+		</image>
+
+		
+
+	</scene>
+
+
+	<scene name="scene_viewsang" title="View dự án 3" onstart="" thumburl="panos/viewsang.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-21.026" vlookat="-1.867" fovtype="MFOV" fov="117.092" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" hlookatmin="-85" hlookatmax="+110" vlookatmin="-45" vlookatmax="+140" />
+
+		<preview url="panos/viewsang.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/viewsang.tiles/pano_%s.jpg" />
+		</image>
+		
+	
+	
+			
+	
+	
+	
+			
+	
+			
+	
+		
+			
+	
+
+	</scene>
+
+	<scene name="scene_viewtoi" title="Ban đêm" onstart="" thumburl="panos/viewtoi.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-24.369" vlookat="-1.793" fovtype="MFOV" fov="117.092" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" hlookatmin="-85" hlookatmax="+110" vlookatmin="-45" vlookatmax="+140" />
+
+		<preview url="panos/viewtoi.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/viewtoi.tiles/pano_%s.jpg" />
+		</image>
+		
+		
+	</scene> -->
+
+	<!-- startup action - here the first pano/scene will be loaded -->
+	<!-- <action name="startup" autorun="onstart">
+		if(startscene === null, copy(startscene,scene[0].name));
+		loadscene(get(startscene), null, MERGE);
+		delayedcall(0, skin_hideskin() );
+	</action> -->
+	
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+
+
+</krpano>

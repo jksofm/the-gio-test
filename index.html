@@ -1,0 +1,522 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web360 The Gió</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <style>
+      html {
+        height: 100%;
+      }
+      body {
+        height: 100%;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        color: #ffffff;
+        background-color: #000000;
+      }
+    </style>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- <div class="menu">
+			<div class="menu-logo">
+				<img src="./assets/Logos/Logo_goku.png" />
+			</div>
+
+			<div class="menu-scene">
+
+				<button class="button">Phú Quốc</button>
+			</div>
+		</div> -->
+      <ul class="dropdown-menu">
+		<button onclick="handleClose()" class="close_menu">
+			
+
+			<svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>
+		</button>
+        <li>
+          <p>
+            <span>View tổng quan</span
+            ><i class="icon-menu fas fa-chevron-down"></i>
+          </p>
+
+          <ul class="sub-menu">
+            <li
+              class="tab-h tab-h-1"
+              onclick="loadscene('scene_overview_sunset')"
+            >
+              <img src="./panos/overview_sunset.tiles/thumb.jpg" />
+              <span> Buổi chiều </span>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="white"
+                viewBox="0 0 576 512"
+              >
+                <path
+                  d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"
+                />
+              </svg>
+            </li>
+            <li
+              class="tab-h tab-h-2"
+              class="sub-menu-item"
+              onclick="loadscene('scene_view_from_river')"
+            >
+              <img src="./panos/scene_view_from_river/thumb.jpg" />
+              <span>Buổi sáng</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="white"
+                viewBox="0 0 576 512"
+              >
+                <path
+                  d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"
+                />
+              </svg>
+            </li>
+            <li
+              class="tab-h tab-h-3"
+              class="sub-menu-item"
+              onclick="loadscene('scene_overview')"
+            >
+              <img src="./panos/overview.tiles/thumb.jpg" />
+              <span>Toàn cảnh góc cao</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="white"
+                viewBox="0 0 576 512"
+              >
+                <path
+                  d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"
+                />
+              </svg>
+            </li>
+            <li
+              class="tab-h tab-h-4"
+              class="sub-menu-item"
+              onclick="loadscene('scene_landscape')"
+            >
+              <img src="./panos/landscape.tiles/thumb.jpg" />
+              <span>Sân chơi</span>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="white"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M320 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM125.7 175.5c9.9-9.9 23.4-15.5 37.5-15.5c1.9 0 3.8 .1 5.6 .3L137.6 254c-9.3 28 1.7 58.8 26.8 74.5l86.2 53.9-25.4 88.8c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l28.7-100.4c5.9-20.6-2.6-42.6-20.7-53.9L238 299l30.9-82.4 5.1 12.3C289 264.7 323.9 288 362.7 288H384c17.7 0 32-14.3 32-32s-14.3-32-32-32H362.7c-12.9 0-24.6-7.8-29.5-19.7l-6.3-15c-14.6-35.1-44.1-61.9-80.5-73.1l-48.7-15c-11.1-3.4-22.7-5.2-34.4-5.2c-31 0-60.8 12.3-82.7 34.3L57.4 153.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l23.1-23.1zM91.2 352H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h69.6c19 0 36.2-11.2 43.9-28.5L157 361.6l-9.5-6c-17.5-10.9-30.5-26.8-37.9-44.9L91.2 352z"
+                />
+              </svg>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            <span>Tiện ích</span> <i class="icon-menu fas fa-chevron-down"></i>
+          </p>
+
+          <ul class="sub-menu">
+            <li class="tab-h tab-h-5" onclick="loadscene('scene_tennis')">
+              <img src="./panos/tennis.tiles/thumb.jpg" />
+              <span>Sân tennis</span>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="white"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M320 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM125.7 175.5c9.9-9.9 23.4-15.5 37.5-15.5c1.9 0 3.8 .1 5.6 .3L137.6 254c-9.3 28 1.7 58.8 26.8 74.5l86.2 53.9-25.4 88.8c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l28.7-100.4c5.9-20.6-2.6-42.6-20.7-53.9L238 299l30.9-82.4 5.1 12.3C289 264.7 323.9 288 362.7 288H384c17.7 0 32-14.3 32-32s-14.3-32-32-32H362.7c-12.9 0-24.6-7.8-29.5-19.7l-6.3-15c-14.6-35.1-44.1-61.9-80.5-73.1l-48.7-15c-11.1-3.4-22.7-5.2-34.4-5.2c-31 0-60.8 12.3-82.7 34.3L57.4 153.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l23.1-23.1zM91.2 352H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h69.6c19 0 36.2-11.2 43.9-28.5L157 361.6l-9.5-6c-17.5-10.9-30.5-26.8-37.9-44.9L91.2 352z"
+                />
+              </svg>
+            </li>
+            <li class="tab-h tab-h-6" onclick="loadscene('scene_mall')">
+              <img src="./panos/mall.tiles/thumb.jpg" />
+              <span>Trung tâm thương mại</span>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="white"
+                viewBox="0 0 576 512"
+              >
+                <path
+                  d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                />
+              </svg>
+            </li>
+            <li class="tab-h tab-h-7" onclick="loadscene('scene_pool')">
+              <img src="./panos/scene_pool/thumb.jpg" />
+              <span>Hồ bơi</span>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="white"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M320 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM125.7 175.5c9.9-9.9 23.4-15.5 37.5-15.5c1.9 0 3.8 .1 5.6 .3L137.6 254c-9.3 28 1.7 58.8 26.8 74.5l86.2 53.9-25.4 88.8c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l28.7-100.4c5.9-20.6-2.6-42.6-20.7-53.9L238 299l30.9-82.4 5.1 12.3C289 264.7 323.9 288 362.7 288H384c17.7 0 32-14.3 32-32s-14.3-32-32-32H362.7c-12.9 0-24.6-7.8-29.5-19.7l-6.3-15c-14.6-35.1-44.1-61.9-80.5-73.1l-48.7-15c-11.1-3.4-22.7-5.2-34.4-5.2c-31 0-60.8 12.3-82.7 34.3L57.4 153.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l23.1-23.1zM91.2 352H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h69.6c19 0 36.2-11.2 43.9-28.5L157 361.6l-9.5-6c-17.5-10.9-30.5-26.8-37.9-44.9L91.2 352z"
+                />
+              </svg>
+            </li>
+            <li
+              class="tab-h tab-h-8"
+              onclick="loadscene('scene_view_from_river')"
+            >
+              <img src="./panos/scene_view_from_river/thumb.jpg" />
+              <span>Buổi sáng</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="white"
+                viewBox="0 0 576 512"
+              >
+                <path
+                  d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"
+                />
+              </svg>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            <span>Cảnh quan</span> <i class="icon-menu fas fa-chevron-down"></i>
+          </p>
+
+          <ul class="sub-menu">
+            <li class="tab-h tab-h-9" onclick="loadscene('scene_pool')">
+              <img src="./panos/scene_pool/thumb.jpg" />
+              <span>Hồ bơi ban ngày</span>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="white"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M320 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM125.7 175.5c9.9-9.9 23.4-15.5 37.5-15.5c1.9 0 3.8 .1 5.6 .3L137.6 254c-9.3 28 1.7 58.8 26.8 74.5l86.2 53.9-25.4 88.8c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l28.7-100.4c5.9-20.6-2.6-42.6-20.7-53.9L238 299l30.9-82.4 5.1 12.3C289 264.7 323.9 288 362.7 288H384c17.7 0 32-14.3 32-32s-14.3-32-32-32H362.7c-12.9 0-24.6-7.8-29.5-19.7l-6.3-15c-14.6-35.1-44.1-61.9-80.5-73.1l-48.7-15c-11.1-3.4-22.7-5.2-34.4-5.2c-31 0-60.8 12.3-82.7 34.3L57.4 153.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l23.1-23.1zM91.2 352H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h69.6c19 0 36.2-11.2 43.9-28.5L157 361.6l-9.5-6c-17.5-10.9-30.5-26.8-37.9-44.9L91.2 352z"
+                />
+              </svg>
+            </li>
+            <li class="tab-h tab-h-10" onclick="loadscene('scene_kid_pool')">
+              <img src="./panos/scene_kid_pool/thumb.jpg" />
+              <span>Hồ bơi trẻ em</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="white"
+                viewBox="0 0 576 512"
+              >
+                <path
+                  d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"
+                />
+              </svg>
+            </li>
+            <li class="tab-h tab-h-11" onclick="loadscene('scene_pool_night')">
+              <img src="./panos/scene_pool_night/thumb.jpg" />
+              <span>Hồ bơi ban đêm</span>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="white"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M320 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM125.7 175.5c9.9-9.9 23.4-15.5 37.5-15.5c1.9 0 3.8 .1 5.6 .3L137.6 254c-9.3 28 1.7 58.8 26.8 74.5l86.2 53.9-25.4 88.8c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l28.7-100.4c5.9-20.6-2.6-42.6-20.7-53.9L238 299l30.9-82.4 5.1 12.3C289 264.7 323.9 288 362.7 288H384c17.7 0 32-14.3 32-32s-14.3-32-32-32H362.7c-12.9 0-24.6-7.8-29.5-19.7l-6.3-15c-14.6-35.1-44.1-61.9-80.5-73.1l-48.7-15c-11.1-3.4-22.7-5.2-34.4-5.2c-31 0-60.8 12.3-82.7 34.3L57.4 153.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l23.1-23.1zM91.2 352H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h69.6c19 0 36.2-11.2 43.9-28.5L157 361.6l-9.5-6c-17.5-10.9-30.5-26.8-37.9-44.9L91.2 352z"
+                />
+              </svg>
+            </li>
+            <li class="tab-h tab-h-12" onclick="loadscene('scene_tennis')">
+              <img src="./panos/tennis.tiles/thumb.jpg" />
+              <span>Sân tennis</span>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="white"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M320 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM125.7 175.5c9.9-9.9 23.4-15.5 37.5-15.5c1.9 0 3.8 .1 5.6 .3L137.6 254c-9.3 28 1.7 58.8 26.8 74.5l86.2 53.9-25.4 88.8c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l28.7-100.4c5.9-20.6-2.6-42.6-20.7-53.9L238 299l30.9-82.4 5.1 12.3C289 264.7 323.9 288 362.7 288H384c17.7 0 32-14.3 32-32s-14.3-32-32-32H362.7c-12.9 0-24.6-7.8-29.5-19.7l-6.3-15c-14.6-35.1-44.1-61.9-80.5-73.1l-48.7-15c-11.1-3.4-22.7-5.2-34.4-5.2c-31 0-60.8 12.3-82.7 34.3L57.4 153.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l23.1-23.1zM91.2 352H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h69.6c19 0 36.2-11.2 43.9-28.5L157 361.6l-9.5-6c-17.5-10.9-30.5-26.8-37.9-44.9L91.2 352z"
+                />
+              </svg>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+	  <ul class="category">
+		<li>
+			<svg
+			xmlns="http://www.w3.org/2000/svg"
+			fill="white"
+			viewBox="0 0 576 512"
+		  >
+			<path
+			  d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"
+			/>
+		  </svg>  View ngoài trời
+		</li>
+		<li>
+			<svg
+			xmlns="http://www.w3.org/2000/svg"
+			fill="white"
+			viewBox="0 0 576 512"
+		  >
+			<path
+			  d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"
+			/>
+		  </svg>  View trong nhà
+		</li>
+		<li>
+			<svg
+			xmlns="http://www.w3.org/2000/svg"
+			fill="white"
+			viewBox="0 0 576 512"
+		  >
+			<path
+			  d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+			/>
+		  </svg>  Mua sắm
+		</li>
+		<li>
+			<svg
+			xmlns="http://www.w3.org/2000/svg"
+			fill="white"
+			viewBox="0 0 448 512"
+		  >
+			<path
+			  d="M320 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM125.7 175.5c9.9-9.9 23.4-15.5 37.5-15.5c1.9 0 3.8 .1 5.6 .3L137.6 254c-9.3 28 1.7 58.8 26.8 74.5l86.2 53.9-25.4 88.8c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l28.7-100.4c5.9-20.6-2.6-42.6-20.7-53.9L238 299l30.9-82.4 5.1 12.3C289 264.7 323.9 288 362.7 288H384c17.7 0 32-14.3 32-32s-14.3-32-32-32H362.7c-12.9 0-24.6-7.8-29.5-19.7l-6.3-15c-14.6-35.1-44.1-61.9-80.5-73.1l-48.7-15c-11.1-3.4-22.7-5.2-34.4-5.2c-31 0-60.8 12.3-82.7 34.3L57.4 153.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l23.1-23.1zM91.2 352H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h69.6c19 0 36.2-11.2 43.9-28.5L157 361.6l-9.5-6c-17.5-10.9-30.5-26.8-37.9-44.9L91.2 352z"
+			/>
+		  </svg>  Hoạt động giải trí
+		</li>
+	  </ul>
+
+      <button onclick="handlePrev()" class="prev-scene">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="black"
+          viewBox="0 0 320 512"
+        >
+          <path
+            d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
+          />
+        </svg>
+      </button>
+
+      <button onclick="handleNext()" class="next-scene">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+          <path
+            d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+          />
+        </svg>
+      </button>
+
+	  <button onclick="handleShow()" class="open_menu">
+			
+
+		
+<svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+	</button>
+
+      <!-- <div class="menu-list">
+			<div class="tab-h tab-h-1" data-id="tab-active-3" onclick="loadscene('scene_overview_sunset')">
+				<h3>
+					Buổi chiều
+				</h3>
+				
+			</div>
+			<div class="tab-h tab-h-2" data-id="tab-active-3" onclick="loadscene('scene_view_from_river')">
+				<h3>
+					Buổi sáng
+				</h3>
+			</div>
+			<div class="tab-h tab-h-3" data-id="tab-active-3"  onclick="loadscene('scene_overview')" >
+				<h3>
+					Toàn cảnh góc cao
+				</h3>
+			</div>
+			
+		
+			
+		</div> -->
+
+      <!-- <div id="render">
+			<div class="tab-active tab-active-1">
+			  <a
+				id="thutest"
+				href="tour.html?startscene=scene_overview_sunset"
+			  ></a>
+			</div>
+			<div class="tab-active tab-active-2" style="display: none">
+			  <iframe src=""></iframe>
+			</div>
+			<div class="tab-active tab-active-3" style="display: none">
+			  <iframe src=""></iframe>
+			</div>
+			<div class="tab-active tab-active-4" style="display: none">
+			  <iframe src=""></iframe>
+			</div>
+			<div class="tab-active tab-active-5" style="display: none">
+			  <iframe src=""></iframe>
+			</div>
+			<div class="tab-active tab-active-6" style="display: none">
+			  <iframe src=""></iframe>
+			</div>
+			<div class="tab-active tab-active-7" style="display: none">
+			  <iframe src=""></iframe>
+			</div>
+		  </div> -->
+    </div>
+    <!-- End sub menu -->
+
+    <!-- Begin 360 -->
+
+    <!-- End 360 -->
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      const handlePrev = () => {
+        const lastscene = localStorage.getItem("prescene");
+
+        krpano.call(
+              "loadscene(" + lastscene + ", null, MERGE, BLEND(0.5));"
+            );
+        $(".prev-scene").css("display", "none"); 
+        $(".next-scene").css("display", "block");
+
+      };
+      const handleNext = () => {
+        const nextscene = localStorage.getItem("nextscene");
+
+        krpano.call(
+              "loadscene(" + nextscene + ", null, MERGE, BLEND(0.5));"
+            );
+        $(".next-scene").css("display", "none");
+        $(".prev-scene").css("display", "block");
+
+      };
+	  	const handleClose = ()=>{
+			$(".dropdown-menu").css("display","none");
+			$(".open_menu").css("display","block");
+		}
+		const handleShow = ()=>{
+			$(".dropdown-menu").css("display","block");
+			$(".open_menu").css("display","none");
+
+			
+		}
+      $(".tab-h").bind("click", function () {
+        $(".tab-h").removeClass("active");
+        $(this).addClass("active");
+        $(".tab-active").hide();
+      });
+
+      $(document).ready(function () {
+        localStorage.removeItem("prescene");
+        localStorage.removeItem("nextscene");
+
+        localStorage.setItem("currentscene", "scene_overview_sunset");
+        // $(".dropdown-menu .icon-menu").click(function () {
+        //   // $('.sub-menu-item').slideUp();
+        //   $(this).parent("p").parent("li").children(".sub-menu").slideToggle();
+        //   $(this).toggleClass("fa-chevron-down fa-chevron-right");
+        // });
+
+		$(".dropdown-menu li").click(function (e) {
+          // $('.sub-menu-item').slideUp();
+		  e.stopPropagation();
+		//   $(".dropdown-menu li .sub-menu").slideUp();
+
+          $(this).children(".sub-menu").slideToggle();
+          $(this).children("p").children(".icon-menu").toggleClass("fa-chevron-down fa-chevron-right");
+        });
+      });
+
+	  
+	  
+    </script>
+
+    <script src="tour.js"></script>
+
+    <div id="pano" style="width: 100%; height: 100%">
+      <noscript
+        ><table style="width: 100%; height: 100%">
+          <tr style="vertical-align: middle">
+            <td>
+              <div style="text-align: center">
+                ERROR:<br /><br />Javascript not activated<br /><br />
+              </div>
+            </td>
+          </tr></table
+      ></noscript>
+      <script>
+        embedpano({
+          xml: "tour.xml",
+          target: "pano",
+          html5: "only",
+          mobilescale: 1.0,
+          passQueryParameters: "startscene,startlookat",
+          onready: krpano_onready_callback,
+        });
+
+        function krpano_onready_callback(krpano_interface) {
+          krpano = krpano_interface;
+        }
+
+        function loadscene(scenename, nav) {
+          const nextscene = localStorage.getItem("nextscene");
+          if (nextscene) {
+            localStorage.setItem("nextscene", nextscene);
+            $(".next-scene").css("display", "block");
+          }
+          localStorage.setItem("nextscene", scenename);
+
+          const previousscene = localStorage.getItem("currentscene");
+
+          if (previousscene && previousscene !== scenename) {
+            localStorage.setItem("prescene", previousscene);
+            $(".prev-scene").css("display", "block");
+          }
+
+          localStorage.setItem("currentscene", scenename);
+
+
+
+
+
+          if (krpano) {
+            krpano.call(
+              "loadscene(" + scenename + ", null, MERGE, BLEND(0.5));"
+            );
+          }
+        }
+
+        function select_button(num) {
+          $(".tab-h").removeClass("active");
+          $("." + num).addClass("active");
+        }
+      </script>
+    </div>
+  </body>
+</html>

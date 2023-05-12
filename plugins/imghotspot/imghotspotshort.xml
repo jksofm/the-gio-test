@@ -1,0 +1,217 @@
+<krpano de="45">
+	<style name="hs_default" onhover="	txtadd(temp_hs1,get(name),_home);
+			    tween(hotspot[get(temp_hs1)].alpha,0,.1);
+	   			txtadd(xxt,'hs_tien_ich',get(xml.scene));
+			    set(hotspot[home].visible,0);
+			 	removehs(get(xxt));
+
+				
+	   			set(hotspot[hs_ao].ath,get(hotspot[get(name)].ath));
+	   			set(hotspot[hs_ao].atv,get(hotspot[get(name)].atv));
+				inc(hotspot[hs_ao].atv,5);
+	   			txtadd(layer[hs_tooltip_container].parent,'hotspot[hs_ao]');
+				   txtadd(layer[hs_tooltip].url,'%SWFPATH%/panos/',get(name),'/thumb.jpg');
+				   txtadd(layer[hs_tooltip_2].url,'%SWFPATH%/panos/',get(name),'/icon_hs_tooltip2.png');
+
+
+
+				if(
+					language==vi, txtadd(texths,'',get(scene[get(name)].title)),
+					language==en, txtadd(texths,'',get(scene[get(name)].entitle)),
+					
+				);
+
+	   			set(layer[text_hs].html,get(texths));
+	   			set(layer[text_hs].zoder,200);
+	   			
+			 tween(layer[hs_tooltip_container].y,60,.1,easeoutinquint);
+				set(layer[hs_tooltip_container].visible,true);	
+			    tween(scale,0.55,0.1);
+			 	
+	   			" onout="  set(hotspot[home].visible,1);
+	   			txtadd(xxt,hs_tien_ich_,get(xml.scene));
+			    add_hs_again(get(xxt));
+	   			 tween(hotspot[get(temp_hs1)].alpha,1,.1);
+				
+				tween(layer[hs_tooltip_container].y,500,.5,easeinoutcirc);
+			  
+				delayedcall(.2,set(layer[hs_tooltip_container].visible,false);set(layer[text_hs].html,););
+				
+			   tween(scale,0.5,0.1);
+	   			" onclick="
+	       	" />
+
+	<!-- <style name="hs_default" onhover="	txtadd(temp_hs1,get(name),_home);
+			   tween(hotspot[get(temp_hs1)].alpha,0,.1);
+				  txtadd(xxt,'hs_tien_ich_',get(xml.scene));
+			   set(hotspot[home].visible,0);
+				removehs(get(xxt));
+				  set(hotspot[hs_ao].ath,get(hotspot[get(name)].ath));
+				  set(hotspot[hs_ao].atv,get(hotspot[get(name)].atv));
+			   inc(hotspot[hs_ao].atv,10);
+				  txtadd(layer[hs_tooltip_container].parent,'hotspot[hs_ao]');
+				  txtadd(layer[hs_tooltip].url,'%SWFPATH%/panos/',get(name),'/thumb.jpg');
+				  txtadd(layer[hs_tooltip_2].url,'%SWFPATH%/panos/',get(name),'/icon_hs_tooltip2.png');
+
+
+
+			   if(
+				   language==vi, txtadd(texths,'',get(scene[get(name)].title)),
+				   language==en, txtadd(texths,'',get(scene[get(name)].entitle)),
+				   
+			   );
+
+				  set(layer[text_hs].html,get(texths));
+				  set(layer[text_hs].zoder,200);
+				  
+			tween(layer[hs_tooltip_container].y,60,.1,easeoutinquint);
+			   set(layer[hs_tooltip_container].visible,true);	
+			   tween(scale,0.55,0.1);
+				
+				  " onout="  set(hotspot[home].visible,1);
+				  txtadd(xxt,hs_tien_ich_,get(xml.scene));
+			   add_hs_again(get(xxt));
+				   tween(hotspot[get(temp_hs1)].alpha,1,.1);
+			   
+			   tween(layer[hs_tooltip_container].y,500,.5,easeinoutcirc);
+			 
+			   delayedcall(.2,set(layer[hs_tooltip_container].visible,false);set(layer[text_hs].html,););
+			   
+			  tween(scale,0.5,0.1);
+				  " onclick="
+			  " onloaded="asyncloop(hovering, add(zorder,100), sub(zorder,100))" /> -->
+
+	<style name="hs_default_tienich" onhover="	txtadd(temp_hs1,get(name),_home);
+			    tween(hotspot[get(temp_hs1)].alpha,0,.1);
+	   			txtadd(xxt,'hs_tien_ich_',get(xml.scene));
+			    set(hotspot[home].visible,0);
+			 	removehs(get(xxt));
+
+				
+	   			set(hotspot[hs_ao].ath,get(hotspot[get(name)].ath));
+	   			set(hotspot[hs_ao].atv,get(hotspot[get(name)].atv));
+	   			txtadd(layer[hs_tooltip_container].parent,'hotspot[hs_ao]');
+	   			txtadd(layer[hs_tooltip].url,'%SWFPATH%/panos/',get(name),'/thumb.jpg');
+
+				if(
+					language==vi, txtadd(texths,'',get(scene[get(name)].title)),
+					language==en, txtadd(texths,'',get(scene[get(name)].entitle)),
+					
+				);
+
+	   			set(layer[text_hs].html,get(texths));
+	   			set(layer[text_hs].zoder,200);
+	   			
+			 tween(layer[hs_tooltip_container].y,60,.1,easeoutinquint);
+				set(layer[hs_tooltip_container].visible,true);	
+			  
+			 	
+	   			" onout="  set(hotspot[home].visible,1);
+	   			txtadd(xxt,hs_tien_ich_,get(xml.scene));
+			    add_hs_again(get(xxt));
+	   			 tween(hotspot[get(temp_hs1)].alpha,1,.1);
+				
+				tween(layer[hs_tooltip_container].y,500,.5,easeinoutcirc);
+			  
+				delayedcall(.2,set(layer[hs_tooltip_container].visible,false);set(layer[text_hs].html,););
+			
+	   			" onclick="
+	       	" onloaded="asyncloop(hovering, add(zorder,100), sub(zorder,100))" />
+
+
+	<style name="hotspot1" scale=".5" scale.touch=".5" distorted="false" edge="bottom" oy="0" url="hs/arrow_down.png" onloaded="animation();" animation="tween(oy, calc(3 - oy), 0.3, easeoutbounce, animation());" />
+	<style name="hotspot5" scale=".1" scale.touch=".1" distorted="false" edge="bottom" oy="0" url="hs/arrow_down2.png" />
+
+
+	<style name="hotspot2" scale=".6" edge="center" url="hs/new_spotd12_gif.png" crop="0|0|128|128" framewidth="128" frameheight="128" frame="0" lastframe="24" onloaded="hotspot_animate();" onclick="looktohotspot(get(name),90); youtubeplayer_open('QfCKecmPzKU');" />
+
+	<style name="hotspotcauvang" keep="false" scale=".6" edge="center" url="hs/cauvang24.png" crop="0|0|64|64" framewidth="64" frameheight="64" frame="0" lastframe="23" onloaded="hotspot_animate();" />
+	<style name="hotspotbandem" keep="false" scale=".6" edge="center" url="hs/icon/ban-dem.png" crop="0|0|64|64" framewidth="64" frameheight="64" frame="0" lastframe="23" onloaded="hotspot_animate();" />
+	<style name="hotspotbanngay" keep="false" scale=".6" edge="center" url="hs/icon/ban-ngay.png" crop="0|0|64|64" framewidth="64" frameheight="64" frame="0" lastframe="23" onloaded="hotspot_animate();" />
+	<style name="hotspotbeboidem" keep="false" scale=".6" edge="center" url="hs/icon/be-boi-dem.png" crop="0|0|64|64" framewidth="64" frameheight="64" frame="0" lastframe="23" onloaded="hotspot_animate();" />
+	<style name="hotspotbeboi" keep="false" scale=".6" edge="center" url="hs/icon/be-boi.png" crop="0|0|64|64" framewidth="64" frameheight="64" frame="0" lastframe="23" onloaded="hotspot_animate();" />
+
+	<style name="hotspotcanhquan" keep="false" scale=".6" edge="center" url="hs/icon/canh-quan.png" crop="0|0|64|64" framewidth="64" frameheight="64" frame="0" lastframe="23" onloaded="hotspot_animate();" />
+	<style name="hotspotkhuvuichoitreem" keep="false" scale=".6" edge="center" url="hs/icon/khu-vui-choi-tre-em.png" crop="0|0|64|64" framewidth="64" frameheight="64" frame="0" lastframe="23" onloaded="hotspot_animate();" />
+	<style name="hotspotkidpool" keep="false" scale=".6" edge="center" url="hs/icon/kid-pool.png" crop="0|0|64|64" framewidth="64" frameheight="64" frame="0" lastframe="23" onloaded="hotspot_animate();" />
+	<style name="hotspotsantennis" keep="false" scale=".6" edge="center" url="hs/icon/san-tennis.png" crop="0|0|64|64" framewidth="64" frameheight="64" frame="0" lastframe="23" onloaded="hotspot_animate();" />
+	<style name="hotspottrungtamthuongmai" keep="false" scale=".6" edge="center" url="hs/icon/trung-tam-thuong-mai.png" crop="0|0|64|64" framewidth="64" frameheight="64" frame="0" lastframe="23" onloaded="hotspot_animate();" />
+	<style name="hotspotviewtong" keep="false" scale=".6" edge="center" url="hs/icon/view-tong.png" crop="0|0|64|64" framewidth="64" frameheight="64" frame="0" lastframe="23" onloaded="hotspot_animate();" />
+	<style name="hotspotmaybay" keep="false" scale=".6" edge="center" url="hs/icon/helicopter.png" crop="0|0|64|64" framewidth="64" frameheight="64" frame="0" lastframe="23" onloaded="hotspot_animate();" />
+
+	<hotspot name="hs_ao" keep="true" url="hs/left.png" scale="0.001" alpha="1" ath="0" atv="0" />
+
+
+	<!-- Begin hs_tooltip_container cho The gio -->
+
+	<layer name="hs_tooltip_container" keep="true" zoder="100" type="container" width="139.8" height="98.4" visible="false" y="200" x="0" maskchildren="false" bgcolor="0xffffff" bgroundedge="10" bgalpha="0.6" align="bottomcenter">
+		<layer name="hs_con" keep="true" zoder="100" type="container" width="123.8" height="82.4" visible="true" y="8" x="8" maskchildren="false" bgcolor="0xffffff" bgroundedge="10" bgalpha="1">
+			<layer name="hs_con1" keep="true" zorder="105" type="container" width="123.8" height="64" visible="true" x="0" y="0" maskchildren="true" bgroundedge="top-left:10" bgcolor="0x495D51" bgalpha="1">
+				<layer name="hs_tooltip" align="center" url="" scale=".8" x="0" y="0" />
+			</layer>
+			<layer name="text_hs" type="text" url="%SWFPATH%/plugins/textfield.swf" zorder="105" x="0" y="64" width="123.8" height="18.4
+		" backgroundcolor="0xffffff" backgroundalpha=".0" html="Bai bien vo cuc" bgshadow="1" roundedge="10" vcenter="true" css="color:black; 
+			 font-family: &#34;Montserrat &#34;,	&#34;Lato	&#34;,sans-serif;
+			 font-size:10px;
+			 text-align:center; 
+			 background-color: #ffffff;
+			 
+			 
+			 border-radius :10px
+
+		  
+			 border:solid 1px white;" />
+			<!-- <layer name="image-cauvang" type="image" url="hs/cauvanglayer.png" zoder="200" width="20" height="20" keep="true"  visible="true" /> -->
+			<layer name="hs_con2" keep="true" zorder="110" type="container" width="35" height="35" visible="true" x="44" y="-26" maskchildren="true" bgcolor="0xffffff" bgalpha="0.6" bgroundedge="17.5">
+				<layer name="hs_tooltip_2" align="center" url="" scale=".6" x="0" y="0" />
+			</layer>
+
+
+		</layer>
+	</layer>
+	<!-- End hs_tooltip_container cho The gio -->
+
+
+	<gallery name="full" imgactive="0">
+		<thumb name="t1" imgurl="%SWFPATH%/photo/gallery/abc.jpg" />
+
+	</gallery>
+
+
+	<action name="create_hs_back" scope="global">
+		<!-- begin xử lí hover -->
+		addhotspot(%1);
+	copy(hs,hotspot[%1]);
+	
+	hs.loadstyle(hs_default|%2);
+	set(hs.ath,%3);
+	set(hs.atv,%4);
+	set(hs.capture,0);
+	set(hs.visible,1);
+	set (hs.keep,false);
+		<!-- set(hs.hscene,%1);
+	set(hs.showal,1); -->
+		set(hs.onclick,	
+	set(layer[hs_tooltip_container].visible,false);
+	wait(.5);
+	loadscene(get(name),null, MERGE, BLEND(1.0, easeInCubic));
+		<!-- end xử lí hover -->
+		);
+		<!-- begin xử lí callout -->
+		txtadd(temp_hs1,%1,_new_home);
+	if(%6,add_hs(get(temp_hs1),%3,%4,%6,-50);,add_hs(get(temp_hs1),%3,%4,40,-50););
+	if(%6,add_tien_ich_n(get(temp_hs1),get(scene[%1].title),%7,0);,add_tien_ich_n(get(temp_hs1),get(scene[%1].title),center,0););
+		<!-- end xử lí callout -->
+
+	</action>
+
+
+	<action name="hotspot_animate">
+        inc(frame,1,get(lastframe),0);
+        mul(ypos,frame,frameheight);
+        txtadd(crop,'0|',get(ypos),'|',get(framewidth),'|',get(frameheight));
+        delayedcall(.095, if(loaded, hotspot_animate() ) );
+</action>
+	<action name="check_length"></action>
+	if(autorotate.enabled == false AND layer[skin_btn_rotate].tooltip == 'Xoay ảnh',,set(autorotate.enabled,true));
+</krpano>
